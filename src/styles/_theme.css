@@ -1,0 +1,52 @@
+/* Stuff in @theme can be used as util class -> bg-color-nav / md:xxx */
+@theme {
+  /* Responsive Design / Breakpoints */
+  --breakpoint-md: 56rem;
+  /* enables use of class -> 3xl:XXXXXX for responsive design */
+
+  /* Basics */
+  --font-text: "Helvetica", "sans-serif";
+  --color-black-80: rgba(0, 0, 0, 0.8);
+  --color-nav: rgba(58, 58, 58, 1);
+
+  /* Dark mode */
+  --color-dark-bg: rgba(13, 15, 17, 1);
+  --color-dark-card: rgba(25, 29, 35, 1);
+
+  /* Light mode */
+  --color-light-bg-1: rgba(241, 243, 244, 1);
+  --color-light-bg-2: rgba(239, 239, 239, 1);
+  --color-light-card-1: rgba(250, 250, 250, 1);
+  --color-light-card-2: rgba(255, 255, 255, 1);
+
+  /* Custom Animations (or use tailwind-animations package) */
+  --animate-fade-zoom-in: fade-zoom-in 0.35s ease-in-out;
+  @keyframes fade-zoom-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.95); /* Start slightly lower & smaller */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); /* End at normal position & size */
+    }
+  }
+}
+
+/* Colors for util classes below */
+:root {
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(0, 0, 0);
+}
+
+[data-theme="dark"] {
+  --background: rgb(0, 0, 0);
+  --foreground: rgb(255, 255, 255);
+}
+
+@layer utilities {
+  .body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}

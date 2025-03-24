@@ -1,0 +1,12 @@
+@layer base {
+  body {
+    -ms-overflow-style: none; /* IE & Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+}
+/* Not sure if this is needed or correctly done for tailwind v4 */
+/* Check again if i dont like the scrollbar behaviors on different devices! */
